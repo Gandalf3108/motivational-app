@@ -1,0 +1,1 @@
+"use strict";var quotes=["Ostvari svoj potencijal!","Nema problema koji ne možete riješiti!","Svaki dan je nova prilika za uspjeh!","Nikada nemojte odustati od svojih snova!","Vi ste izvanredna osoba!"];$(function(){var a=$("#quote");$("#generate").on({click:function(){var e=Math.floor(Math.random()*quotes.length);a.fadeOut(1500,function(){a.text(quotes[e])}).fadeIn()}})});
