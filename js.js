@@ -1,11 +1,11 @@
-const initialItems = document.querySelectorAll(".movie-item");
+const initialItems = document.querySelectorAll(".list-item");
 initialItems.forEach (item => attachMovieItemEventListener(item) );
 
 document.getElementById("movie-form").addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const title = document.getElementById("movie-title");
-        const rating = document.getElementById("movie-rating");
+        const title = document.getElementById("title");
+        const rating = document.getElementById("rating");
 
         addMovieToList(title.value, rating.value);
         document.getElementById("movie-form").reset();
@@ -13,14 +13,15 @@ document.getElementById("movie-form").addEventListener("submit", function (event
 
 function addMovieToList(title, rating) {
         const movieList = document.getElementById("movie-list");
-        const li = document.getElementById("li");
+        const li = document.createElement("li");
         
-        li.classList = "movie-item";
+        li.className = "list-item";
 
         li.innerHTML = `
                         <div>
                                 <h3>${title}</h3>
                                 <span>Rating: <em>${rating}</em> </span>
+                                <p>Datum</p>
                         </div>
                         <div class="buttons">
                                 <button class="fav-btn">Add to favorites</button>
